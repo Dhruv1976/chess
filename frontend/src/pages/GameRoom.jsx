@@ -284,7 +284,7 @@ const GameRoom = () => {
   }
 
   return (
-    <div className="bg-white overflow-y-auto">
+    <div className="h-full bg-white overflow-y-auto">
       <div className="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 py-2 sm:py-3 md:py-4">
         <div className="sticky top-0 z-10 bg-white border-b border-gray-200 pb-2 mb-2 sm:mb-3 md:mb-4">
           {gameOver ? (
@@ -408,7 +408,7 @@ const GameRoom = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-center gap-2 mb">
+          <div className="flex flex-row items-center justify-center gap-2 mb-6">
             <Button
               variant="danger"
               onClick={() => {
