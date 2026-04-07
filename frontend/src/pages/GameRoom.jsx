@@ -243,11 +243,16 @@ const GameRoom = () => {
   }, []);
 
   useEffect(() => {
-    if (connected && routeRoomId && !hasJoinedRef.current) {
-      rejoinRoom(emit);
-      hasJoinedRef.current = true;
+    if (chatOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
-  }, [connected, routeRoomId, rejoinRoom, emit]);
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [chatOpen]);
 
   useEffect(() => {
     const handleReconnect = () => {
@@ -395,7 +400,7 @@ const GameRoom = () => {
           </div>
         )}
 
-        <div className="border-t border-gray-200 pt-3 sm:pt-4">
+        <div className="border-t border-gray-200 pt-3 sm:pt-4 mt-4">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-3 sm:mb-4">
             <div>
               <p className="text-gray-600 text-xs sm:text-sm">
@@ -413,11 +418,11 @@ const GameRoom = () => {
                 setWinner(opponentColor);
                 toast.error('You resigned. Opponent Wins!', { duration: 3000 });
               }}
-              className="text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3"
+              className="text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3 w-full sm:w-auto"
             >
               Resign
             </Button>
-            <Button variant="destructive" onClick={handleLeaveGame} className="text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3">
+            <Button variant="destructive" onClick={handleLeaveGame} className="text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3 w-full sm:w-auto">
               Leave Game
             </Button>
           </div>
