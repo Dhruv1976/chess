@@ -408,7 +408,7 @@ const GameRoom = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-center gap-2 mb-10 sm:mb-0">
+          <div className="flex flex-row items-center justify-center gap-2 mb-16 sm:mb-0">
             <Button
               variant="danger"
               onClick={() => {
