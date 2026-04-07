@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+html, body {
+  @apply h-screen overflow-hidden bg-white;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  @apply h-full overflow-hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent any element from causing page scroll */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure no horizontal scroll */
+body {
+  overflow-x: hidden;
+}
